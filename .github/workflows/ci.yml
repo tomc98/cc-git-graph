@@ -12,9 +12,6 @@ jobs:
   check:
     runs-on: macos-15
     timeout-minutes: 20
-    env:
-      GIT_CONFIG_NOSYSTEM: '1'
-      GIT_CONFIG_GLOBAL: /dev/null
     steps:
       - uses: actions/checkout@v7
         with:
@@ -30,6 +27,9 @@ jobs:
           /usr/bin/python3 --version
           test -x /usr/bin/pbcopy
       - run: npm run check
+        env:
+          GIT_CONFIG_NOSYSTEM: '1'
+          GIT_CONFIG_GLOBAL: /dev/null
       - run: npm run release:archive
       - uses: actions/upload-artifact@v7
         with:
