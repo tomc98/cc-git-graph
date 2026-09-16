@@ -1,0 +1,4 @@
+{
+  "description": "Git Graph conversation button and panel",
+  "modules": ["./register.tsx"]
+}

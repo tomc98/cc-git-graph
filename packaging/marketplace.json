@@ -1,0 +1,16 @@
+{
+  "name": "cc-git-graph-local",
+  "description": "Local development package for the Claude Code Git Graph mod.",
+  "owner": {
+    "name": "Thomas Csere"
+  },
+  "plugins": [
+    {
+      "name": "cc-git-graph",
+      "source": "./cc-git-graph",
+      "description": "Git history, comparisons and deliberate Git actions inside Claude Code.",
+      "version": "0.1.4",
+      "license": "MIT"
+    }
+  ]
+}

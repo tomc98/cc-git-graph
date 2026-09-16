@@ -1,0 +1,10 @@
+node_modules/
+work/
+dist/
+coverage/
+.claude/
+.cache/
+.env
+.env.*
+*.log
+.DS_Store

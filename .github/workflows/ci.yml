@@ -1,0 +1,40 @@
+name: Check and package
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: macos-15
+    timeout-minutes: 20
+    env:
+      GIT_CONFIG_NOSYSTEM: '1'
+      GIT_CONFIG_GLOBAL: /dev/null
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Verify external helpers
+        run: |
+          git --version
+          /usr/bin/python3 --version
+          test -x /usr/bin/pbcopy
+      - run: npm run check
+      - run: npm run release:archive
+      - uses: actions/upload-artifact@v7
+        with:
+          name: cc-git-graph-candidate
+          path: |
+            dist/cc-git-graph-*.tar.gz
+            dist/cc-git-graph-*.tar.gz.sha256
+          if-no-files-found: error

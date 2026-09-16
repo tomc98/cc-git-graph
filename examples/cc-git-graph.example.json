@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "repositoryMaps": [
+    {
+      "whenPath": "~/Projects/control",
+      "includeSubdirectories": true,
+      "defaultRepository": "monorepo",
+      "repositories": [
+        {
+          "id": "monorepo",
+          "label": "Monorepo",
+          "path": "~/Projects/monorepo"
+        },
+        {
+          "id": "control",
+          "label": "Control",
+          "path": "~/Projects/control"
+        }
+      ]
+    }
+  ]
+}

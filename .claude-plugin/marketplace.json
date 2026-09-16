@@ -1,0 +1,16 @@
+{
+  "name": "cc-git-graph",
+  "description": "Experimental Git history browser for Claude Code.",
+  "owner": {
+    "name": "Thomas Csere"
+  },
+  "plugins": [
+    {
+      "name": "cc-git-graph",
+      "source": "./",
+      "description": "Git history, comparisons and deliberate Git actions inside Claude Code.",
+      "version": "0.1.4",
+      "license": "MIT"
+    }
+  ]
+}

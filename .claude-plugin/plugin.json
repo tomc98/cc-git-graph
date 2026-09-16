@@ -1,0 +1,11 @@
+{
+  "name": "cc-git-graph",
+  "version": "0.1.4",
+  "description": "Browse Git history in a panel beside your Claude Code conversation.",
+  "author": {
+    "name": "Thomas Csere"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/tomc98/cc-git-graph",
+  "homepage": "https://github.com/tomc98/cc-git-graph#readme"
+}

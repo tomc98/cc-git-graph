@@ -1,0 +1,35 @@
+{
+  "name": "cc-git-graph",
+  "version": "0.1.4",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test:mod": "CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 claude plugin test .",
+    "test:integration": "node --test integration/*.test.mjs",
+    "benchmark": "node scripts/benchmark.mjs",
+    "audit:runtime": "node scripts/audit-runtime.mjs",
+    "package": "node scripts/package.mjs",
+    "types:fetch": "node scripts/fetch-types.mjs",
+    "typecheck:ci": "tsc -p tsconfig.ci.json",
+    "audit:release": "node scripts/audit-release.mjs",
+    "release:archive": "node scripts/release.mjs",
+    "check": "npm run types:fetch && npm run typecheck:ci && npm run test:integration && npm run package && npm run audit:release"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  },
+  "license": "MIT",
+  "description": "A colourful Git graph and repository switcher inside Claude Code.",
+  "engines": {
+    "node": ">=24"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomc98/cc-git-graph.git"
+  },
+  "homepage": "https://github.com/tomc98/cc-git-graph#readme",
+  "bugs": {
+    "url": "https://github.com/tomc98/cc-git-graph/issues"
+  }
+}
