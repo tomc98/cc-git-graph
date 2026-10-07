@@ -82,8 +82,9 @@ export const register: Register = on => {
         if (typeof input.target !== 'string') throw new Error('graph_open requires target.');
         result = await openReview($, state, input.target, input, true);
       }
-      return { result, text: JSON.stringify(result) };
-    } catch (error) { return { result: { error: String(error) }, text: String(error), isError: true }; }
+      const text = JSON.stringify(result);
+      return { result: text, text };
+    } catch (error) { return { result: String(error), text: String(error), isError: true }; }
   });
   on('command.run', { command: 'gg' }, async ($, e) => {
     const arg = e.args.trim();
