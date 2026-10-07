@@ -9,7 +9,7 @@
       "name": "cc-git-graph",
       "source": "./",
       "description": "Git history, comparisons and deliberate Git actions inside Claude Code.",
-      "version": "0.1.4",
+      "version": "0.2.1",
       "license": "MIT"
     }
   ]

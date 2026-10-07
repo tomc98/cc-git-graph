@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.2.1 — Unreleased experimental candidate
+
+- Make Back retrace review tabs, files and selected commits, restoring scroll position, preview pages, line selections and graph lanes.
+- Return to the repository graph at the start of review history; cancel pending navigation without accepting late results.
+- Restore the underlying file position after leaving Ask Claude.
+
+## 0.2.0 — Unreleased experimental candidate
+
+- Add `/gg` URL navigation for GitHub PRs, commits, comparisons, branch/file links and diff-file anchors.
+- Review complete PR comparisons with bounded file pages, commit graphs, coloured diffs and selected-context Ask Claude.
+- Add model-callable `graph_open`, `graph_selection` and `graph_read`, a bundled review skill, and Follow Claude control.
+- Keep published PRs, local branch changes, uncommitted work and cumulative worktree changes distinct.
+- Resolve open parent PR stacks or validate explicitly ordered stacks using repository, branch and ancestry checks.
+- Reuse mapped local repositories/worktrees or fetch selected objects into an isolated bare cache without changing a checkout.
+- Preserve immutable review endpoints, bounded navigation history, selected preview lines and GitHub links.
+
 ## 0.1.4 — 2026-09-16 · Experimental pre-release
 
 - Click the sticky lane range to choose Auto, All, or any positive whole-number maximum; apply with Enter or Apply, or discard with Cancel.

@@ -1,6 +1,6 @@
 {
   "name": "cc-git-graph",
-  "version": "0.1.4",
+  "version": "0.2.1",
   "description": "Browse Git history in a panel beside your Claude Code conversation.",
   "author": {
     "name": "Thomas Csere"

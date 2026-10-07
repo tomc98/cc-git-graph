@@ -20,8 +20,9 @@ export async function sourceFiles(root) {
 export async function runtimeFiles(root) {
   const files = await sourceFiles(root);
   const documents = new Set(['README.md', 'LICENSE', 'CHANGELOG.md', 'CONTRIBUTING.md', 'SPEC.md', 'PLAN.md']);
-  const helpers = new Set(['git-read.py', 'git-state.py', 'file-preview.py', 'git-files.py']);
+  const helpers = new Set(['git-read.py', 'git-state.py', 'file-preview.py', 'git-files.py', 'github-read.py']);
   return files.filter(path => path === '.claude-plugin/plugin.json'
+    || /^skills\/.*\.md$/.test(path)
     || /^hooks\/.*\.(ts|tsx|json)$/.test(path)
     || (path.startsWith('scripts/') && helpers.has(path.slice(8)))
     || documents.has(path)

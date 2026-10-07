@@ -12,7 +12,7 @@ import time
 def main():
     request = json.loads(sys.stdin.read(65537))
     args = request["args"]
-    allowed = {"rev-parse", "rev-list", "for-each-ref", "log", "show", "status", "diff", "diff-tree", "cat-file", "worktree", "stash", "ls-files", "config", "symbolic-ref", "check-ref-format", "hash-object"}
+    allowed = {"rev-parse", "merge-base", "ls-tree", "rev-list", "for-each-ref", "log", "show", "status", "diff", "diff-tree", "cat-file", "worktree", "stash", "ls-files", "config", "symbolic-ref", "check-ref-format", "hash-object"}
     if not args or args[0] not in allowed:
         raise ValueError("Unsupported read command")
     # Secondary allowlists keep this transport read-only even with a malformed caller.

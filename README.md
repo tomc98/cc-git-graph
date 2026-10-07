@@ -4,7 +4,7 @@
 
 Browse commits, inspect changes and switch repositories without leaving the terminal. Run Claude in your orchestration repo and use Git Graph to explore the repositories where the work happens.
 
-**Experimental · 0.1.4 candidate · macOS · tested on Claude Code 2.1.272**
+**Experimental · 0.2.0 local candidate · macOS · tested on Claude Code 2.1.272**
 
 ![Git Graph beside a Claude Code conversation, showing colourful commit lanes, branch labels and pinned lane controls.](docs/images/git-graph-overview.png)
 
@@ -18,6 +18,7 @@ Browse commits, inspect changes and switch repositories without leaving the term
 - Branch filtering, paged history, loaded-history search and bounded older-history search. History loads automatically as unfinished connections approach the visible area, in 200-commit pages without resetting your position. Failed reads pause for an explicit retry.
 - Commit and merge-parent details, file diffs, working changes, tags, stashes and comparisons.
 - Explicit Git actions with a target/effect preview and confirmation.
+- `/gg <GitHub URL>` opens PRs, commits, comparisons and linked files; `/gg worktree main` reviews local work. Model tools can read or navigate the same review with a Follow Claude toggle. See [GitHub and worktree reviews](docs/REVIEWS.md).
 - **Ask Claude** to preview and send selected context to the main conversation.
 
 Browsing does not submit model prompts. Git actions can change repositories; review their previews. Ask Claude submits only when you press Send.
@@ -49,7 +50,7 @@ Enable function hooks in your Claude profile's `settings.json`, **merging this e
 
 Restart Claude, then click **Git Graph** or run `/git-graph`. User-scope installation loads it across projects in that profile. A separate `CLAUDE_CONFIG_DIR` needs its own installation and flag.
 
-Requires macOS, Git, `/usr/bin/python3` and `/usr/bin/pbcopy`. Node is needed only for development and packaging. See [installation, updates and removal](docs/INSTALL.md).
+GitHub reviews additionally require the GitHub CLI (`gh`) authenticated for the repository. Requires macOS, Git, `/usr/bin/python3` and `/usr/bin/pbcopy`. Node is needed only for development and packaging. See [installation, updates and removal](docs/INSTALL.md).
 
 ## Show the repositories you actually work on
 

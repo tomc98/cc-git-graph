@@ -74,3 +74,17 @@ Moving the footer one row lower was tested and clipped it out of view. The blank
 Native Claude Code 2.1.272 testing on the disposable 12-lane fixture confirmed: clicking the range opens the footer editor; All shows 12 lanes; typing a count and Enter or Apply changes the count; zero is rejected; Cancel retains the previous value; Auto restores the default; and the oldest commit remains visible after changes. At 110 terminal columns, All shows the seven lanes that fit with a readable message area, explains the limit and supports paging. Widening back to 200 columns restores all 12 lanes. A fresh Claude process restored the saved custom count of 10. The fresh-process launch button needed a second click after startup settled; no prompt was submitted. Captures are under ignored `work/footer-proof/lanes-*.txt`.
 
 Automated coverage includes valid/invalid lane input, counts above eight, width limits, old-preference migration, per-repository persistence and unchanged controller selection/history position. The host owns the outer split width; the plugin expands its graph gutter within that width, rather than resizing the conversation split.
+
+### GitHub and worktree reviews — 0.2.0 local candidate
+
+The complete check passed 118 integration tests, typechecking, packaging and the release audit. Eleven native plugin tests passed, including model selection reads and native review/Ask controls. The bundled review skill and strict plugin manifest validation passed.
+
+A real Claude Code 2.1.272 terminal at 180×48 registered `/gg` and opened a public commit URL in the side pane. Physical terminal mouse events selected Files, opened its actual patch and opened the Ask Claude preview containing the file and exact comparison IDs. No model prompt was submitted in this walkthrough. A separate live read of public `cli/cli` PR #14462 fetched objects into a disposable bare cache, returned its two changed files and loaded a complete file diff. A live public commit read also reused the matching local checkout.
+
+The first native launch exposed a skill/command name collision; renaming the bundled skill to `review-with-git-graph` fixed command registration, verified in a fresh terminal. Remaining limits are documented in REVIEWS.md: GitHub diff-line anchors, Enterprise hosts, arbitrary stack descendants/Graphite metadata and automatic disk-cache eviction. End-to-end autonomous model decision-making and every private/fork PR variant have not been manually exercised.
+
+## Review Back navigation — 17 September 2026
+
+The 0.2.1 local candidate passed TypeScript checks, 14 focused review integration tests, 11 native plugin tests, release audit and strict packaged-plugin validation. Regression coverage includes tab/file history, selected lines and preview pages, lane state, root return and cancelled asynchronous reads.
+
+A real Claude Code 2.1.272 terminal walkthrough opened a public root commit, switched to its 94-file list, scrolled to offset 19, opened a file diff, and clicked Back. The file list returned to exactly offset 19 with the same top file. Native host logging confirmed the restored offset. Restoration uses a rendered keyed anchor because Claude skips a plugin's own scroll hook on re-entry.
